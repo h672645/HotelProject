@@ -1,4 +1,6 @@
-﻿namespace HotelLib
+﻿using GuestLib;
+
+namespace HotelLib
 {
     public class HotelRoom
     {
@@ -16,5 +18,11 @@
             this.SizeOfRoom = SizeOfRoom;
             this.QualityOfRoom = QualityOfRoom;
         }
+    }
+
+    public class HotelReservation
+    {
+        private Guest guest { get; set; }
+
     }
 }

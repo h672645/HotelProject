@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestLib", "GuestLib\GuestLib.csproj", "{A283BC1F-B3FE-47AF-BF28-3210FD09BA6D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelLib", "HotelLib\HotelLib.csproj", "{028828BF-E432-4249-96C4-E7171BBA78A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelWebsite", "HotelWebsite\HotelWebsite.csproj", "{7DE1F93F-EF7A-47C0-B7C1-9C0EAB75517C}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A283BC1F-B3FE-47AF-BF28-3210FD09BA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A283BC1F-B3FE-47AF-BF28-3210FD09BA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A283BC1F-B3FE-47AF-BF28-3210FD09BA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A283BC1F-B3FE-47AF-BF28-3210FD09BA6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{028828BF-E432-4249-96C4-E7171BBA78A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{028828BF-E432-4249-96C4-E7171BBA78A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028828BF-E432-4249-96C4-E7171BBA78A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
