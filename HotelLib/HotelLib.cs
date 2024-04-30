@@ -1,4 +1,5 @@
-﻿using UserLib;
+﻿using System.Collections;
+using UserLib;
 
 namespace HotelLib
 {
@@ -10,13 +11,18 @@ namespace HotelLib
 
         private string Beskrivelse { get; set; }
 
+        private List<HotelRoom> HotelRooms { get; set; }
 
+        private List<HotelReservation> HotelReservations { get; set; }
 
-        private HotelRoom[] HotelRooms { get; set; }
-
-        private HotelReservation[] HotelReservations { get; set; }
-
-
+        public Hotel(string navn, string hotellkjede, string beskrivelse)
+        {
+            this.Navn = navn;
+            this.HotellKjede = hotellkjede;
+            this.Beskrivelse = beskrivelse;
+            HotelRooms = new List<HotelRoom>();
+            HotelReservations = new List<HotelReservation>();
+        }
 
     }
     public class HotelRoom
