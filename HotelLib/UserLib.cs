@@ -4,13 +4,13 @@ namespace UserLib
 {
     public class Person
     {
-        public string Navn { get; set; }
+        public string Fornavn { get; set; }
 
         public string Etternavn { get; set; }
 
         public Person(string navn, string etternavn)
         {
-            this.Navn = navn;
+            this.Fornavn = navn;
             this.Etternavn = etternavn;
         }
 
@@ -19,7 +19,7 @@ namespace UserLib
     public class Guest : Person
     {
         public Guest(string Navn, string Etternavn) : base(Navn, Etternavn) {
-            this.Navn = Navn;
+            this.Fornavn = Navn;
             this.Etternavn = Etternavn;
         }
     }
