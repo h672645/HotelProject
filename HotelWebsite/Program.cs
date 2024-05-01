@@ -1,4 +1,5 @@
 using HotelWebsite.Data;
+using HotelWebsite.NET.YourOutputDirectory;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,8 @@ namespace HotelWebsite
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddRazorPages();
+
+            builder.Services.AddScoped<MyFirstDatabaseContext>();
 
             var app = builder.Build();
 

@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelClasses.NET", "HotelLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelComputer.NETFramework", "HotelComputer\HotelComputer.NETFramework.csproj", "{1D9C55BF-CE22-42F1-AF01-8638FD298F13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelWebsite", "HotelWebsite\HotelWebsite.csproj", "{0EFE90A6-3D81-413F-8CD1-1629B2708318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelWebsite.NET", "HotelWebsite\HotelWebsite.NET.csproj", "{0EFE90A6-3D81-413F-8CD1-1629B2708318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDataContext", "WPFDataContext\WPFDataContext.csproj", "{31D7F7CD-D2F3-4C1F-8FA1-F49AE6906168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFDataContext.NET", "WPFDataContext\WPFDataContext.NET.csproj", "{31D7F7CD-D2F3-4C1F-8FA1-F49AE6906168}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelClasses.NETFramework", "HotelLib2\HotelClasses.NETFramework.csproj", "{21FCD52F-E349-46E0-8B2A-2B7DF8873A11}"
 EndProject
