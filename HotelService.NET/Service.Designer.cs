@@ -37,10 +37,10 @@ namespace HotelComputer
             // 
             // backButton
             // 
-            backButton.Location = new Point(795, 609);
-            backButton.Margin = new Padding(4, 5, 4, 5);
+            backButton.Location = new Point(696, 457);
+            backButton.Margin = new Padding(4, 4, 4, 4);
             backButton.Name = "backButton";
-            backButton.Size = new Size(256, 65);
+            backButton.Size = new Size(224, 49);
             backButton.TabIndex = 13;
             backButton.Text = "Tilbake";
             backButton.UseVisualStyleBackColor = true;
@@ -48,20 +48,28 @@ namespace HotelComputer
             // 
             // listofjobs
             // 
-            listofjobs.Location = new Point(129, 98);
+            listofjobs.Location = new Point(113, 74);
+            listofjobs.Margin = new Padding(3, 2, 3, 2);
             listofjobs.Name = "listofjobs";
-            listofjobs.Size = new Size(700, 400);
+            listofjobs.Size = new Size(613, 301);
             listofjobs.TabIndex = 100;
             listofjobs.UseCompatibleStateImageBehavior = false;
+            listofjobs.View = View.Details;
+
+            // Add columns to the ListView
+            listofjobs.Columns.Add("RoomID", 100); // Width set to 100 pixels, adjust as needed
+            listofjobs.Columns.Add("Tjeneste", 500); // Width set to 500 pixels, adjust as needed
+
+
             // 
             // Service
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 692);
+            ClientSize = new Size(934, 519);
             Controls.Add(listofjobs);
             Controls.Add(backButton);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Service";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

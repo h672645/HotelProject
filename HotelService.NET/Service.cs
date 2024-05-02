@@ -16,23 +16,25 @@ namespace HotelComputer
     {
         private MyFirstDatabaseContext dx = new();
         private ObservableCollection<RoomService> roomServices = new ObservableCollection<RoomService>();
-    public Service()
+
+        public Service()
         {
             foreach (var serv in dx.RoomServices)
             {
                 roomServices.Add(serv);
-
             }
 
             InitializeComponent();
+
+            // Populate ListView with roomService data
             foreach (var serv in roomServices)
             {
+                // Create ListViewItem with RoomID and Tjeneste values
+                ListViewItem item = new ListViewItem(new[] { serv.RoomId.ToString(), serv.Tjeneste });
 
-                listofjobs.Items.Add(serv.ToString());
-
-
+                // Add the ListViewItem to the ListView
+                listofjobs.Items.Add(item);
             }
-
         }
         private void backButton_Click(object sender, EventArgs e)
         {
