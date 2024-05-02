@@ -16,4 +16,21 @@ public partial class HotelRoom
     public bool? Occupied { get; set; }
 
     public virtual ICollection<HotelReservation> HotelReservations { get; set; } = new List<HotelReservation>();
+
+    public bool IsReservationActive(DateTime currentDate, DateTime StartDate, DateTime EndDate)
+    {
+        if (this == null)
+        {
+            return false;
+        }
+
+        if (currentDate >= StartDate && currentDate < EndDate)
+        {
+            this.Occupied = true;
+            return true;
+        }
+
+        this.Occupied = false;
+        return false;
+    }
 }
