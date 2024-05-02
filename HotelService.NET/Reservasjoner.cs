@@ -15,10 +15,6 @@ namespace HotelComputer
         public Reservasjoner()
         {
             InitializeComponent();
-
-            start_dato_selector.Value = DateTime.Today;
-
-            slutt_dato_selector.Value = DateTime.Today.AddYears(1);
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
