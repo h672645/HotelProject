@@ -1,5 +1,7 @@
+using HotelClasses.NET.YourOutputDirectory;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,8 +14,15 @@ namespace HotelComputer
 {
     public partial class Maintenence : Form
     {
+        private MyFirstDatabaseContext dx = new();
+        private ObservableCollection<HotelRoom> rooms = new ObservableCollection<HotelRoom>();
         public Maintenence()
         {
+
+            foreach (var room in dx.HotelRooms)
+            {
+                rooms.Add(room);
+            }
             InitializeComponent();
         }
 
@@ -36,5 +45,6 @@ namespace HotelComputer
         {
             Close();
         }
+
     }
 }

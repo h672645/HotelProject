@@ -36,6 +36,14 @@ namespace HotelComputer
         {
             Close();
         }
+
+        private void listofjobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in listofjobs.SelectedItems)
+            {
+                listofjobs.Items.Remove(item);
+            }
+        }
     }
 
 }

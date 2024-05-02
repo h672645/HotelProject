@@ -28,144 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            romvelger_label = new Label();
-            rom_label = new Label();
-            romvelger_listebox = new ListBox();
-            rom_liste = new ListView();
-            status_label = new Label();
-            status_liste = new ListView();
-            reservasjonsliste_liste = new ListView();
-            reservasjonsliste_label = new Label();
-            tidsrom_liste = new ListView();
-            tidsrom_label = new Label();
-            backButton = new Button();
+            label1 = new Label();
+            button1 = new Button();
+            listofjobs = new ListView();
             SuspendLayout();
             // 
-            // romvelger_label
+            // label1
             // 
-            romvelger_label.AutoSize = true;
-            romvelger_label.Location = new Point(17, 43);
-            romvelger_label.Margin = new Padding(4, 0, 4, 0);
-            romvelger_label.Name = "romvelger_label";
-            romvelger_label.Size = new Size(91, 20);
-            romvelger_label.TabIndex = 1;
-            romvelger_label.Text = "Rom-Velger:";
+            label1.AutoSize = true;
+            label1.Location = new Point(126, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Cleaning";
             // 
-            // rom_label
+            // button1
             // 
-            rom_label.AutoSize = true;
-            rom_label.Location = new Point(236, 48);
-            rom_label.Margin = new Padding(4, 0, 4, 0);
-            rom_label.Name = "rom_label";
-            rom_label.Size = new Size(43, 20);
-            rom_label.TabIndex = 3;
-            rom_label.Text = "Rom:";
+            button1.Location = new Point(742, 303);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 2;
+            button1.Text = "Return";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // romvelger_listebox
+            // listofjobs
             // 
-            romvelger_listebox.FormattingEnabled = true;
-            romvelger_listebox.Location = new Point(16, 72);
-            romvelger_listebox.Margin = new Padding(4, 5, 4, 5);
-            romvelger_listebox.Name = "romvelger_listebox";
-            romvelger_listebox.Size = new Size(83, 604);
-            romvelger_listebox.TabIndex = 4;
-            romvelger_listebox.SelectedIndexChanged += listBox1_SelectedIndexChanged;
-            // 
-            // rom_liste
-            // 
-            rom_liste.Location = new Point(236, 94);
-            rom_liste.Margin = new Padding(4, 5, 4, 5);
-            rom_liste.Name = "rom_liste";
-            rom_liste.Size = new Size(160, 147);
-            rom_liste.TabIndex = 5;
-            rom_liste.UseCompatibleStateImageBehavior = false;
-            // 
-            // status_label
-            // 
-            status_label.AutoSize = true;
-            status_label.Location = new Point(240, 305);
-            status_label.Margin = new Padding(4, 0, 4, 0);
-            status_label.Name = "status_label";
-            status_label.Size = new Size(52, 20);
-            status_label.TabIndex = 6;
-            status_label.Text = "Status:";
-            // 
-            // status_liste
-            // 
-            status_liste.Location = new Point(240, 331);
-            status_liste.Margin = new Padding(4, 5, 4, 5);
-            status_liste.Name = "status_liste";
-            status_liste.Size = new Size(160, 147);
-            status_liste.TabIndex = 7;
-            status_liste.UseCompatibleStateImageBehavior = false;
-            // 
-            // reservasjonsliste_liste
-            // 
-            reservasjonsliste_liste.Location = new Point(723, 72);
-            reservasjonsliste_liste.Margin = new Padding(4, 5, 4, 5);
-            reservasjonsliste_liste.Name = "reservasjonsliste_liste";
-            reservasjonsliste_liste.Size = new Size(163, 406);
-            reservasjonsliste_liste.TabIndex = 8;
-            reservasjonsliste_liste.UseCompatibleStateImageBehavior = false;
-            // 
-            // reservasjonsliste_label
-            // 
-            reservasjonsliste_label.AutoSize = true;
-            reservasjonsliste_label.Location = new Point(719, 48);
-            reservasjonsliste_label.Margin = new Padding(4, 0, 4, 0);
-            reservasjonsliste_label.Name = "reservasjonsliste_label";
-            reservasjonsliste_label.Size = new Size(171, 20);
-            reservasjonsliste_label.TabIndex = 9;
-            reservasjonsliste_label.Text = "Tilhørende reservasjoner";
-            // 
-            // tidsrom_liste
-            // 
-            tidsrom_liste.Location = new Point(896, 72);
-            tidsrom_liste.Margin = new Padding(4, 5, 4, 5);
-            tidsrom_liste.Name = "tidsrom_liste";
-            tidsrom_liste.Size = new Size(131, 406);
-            tidsrom_liste.TabIndex = 10;
-            tidsrom_liste.UseCompatibleStateImageBehavior = false;
-            // 
-            // tidsrom_label
-            // 
-            tidsrom_label.AutoSize = true;
-            tidsrom_label.Location = new Point(895, 48);
-            tidsrom_label.Margin = new Padding(4, 0, 4, 0);
-            tidsrom_label.Name = "tidsrom_label";
-            tidsrom_label.Size = new Size(72, 20);
-            tidsrom_label.TabIndex = 11;
-            tidsrom_label.Text = "Tids-rom:";
-            // 
-            // backButton
-            // 
-            backButton.Location = new Point(772, 609);
-            backButton.Margin = new Padding(4, 5, 4, 5);
-            backButton.Name = "backButton";
-            backButton.Size = new Size(256, 65);
-            backButton.TabIndex = 12;
-            backButton.Text = "Tilbake";
-            backButton.UseVisualStyleBackColor = true;
-            backButton.Click += backButton_Click;
-            // 
-            // Rom
+            listofjobs.Location = new Point(113, 74);
+            listofjobs.Margin = new Padding(3, 2, 3, 2);
+            listofjobs.Name = "listofjobs";
+            listofjobs.Size = new Size(613, 301);
+            listofjobs.TabIndex = 100;
+            listofjobs.UseCompatibleStateImageBehavior = false;
+            listofjobs.View = View.Details;
+
+            // Add columns to the ListView
+            listofjobs.Columns.Add("RoomNummer", 100); // Width set to 100 pixels, adjust as needed
+            listofjobs.Columns.Add("SkalVaskes", 500); // Width set to 500 pixels, adjust as needed
+            // Maintenence
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1067, 692);
-            Controls.Add(backButton);
-            Controls.Add(tidsrom_label);
-            Controls.Add(tidsrom_liste);
-            Controls.Add(reservasjonsliste_label);
-            Controls.Add(reservasjonsliste_liste);
-            Controls.Add(status_liste);
-            Controls.Add(status_label);
-            Controls.Add(rom_liste);
-            Controls.Add(romvelger_listebox);
-            Controls.Add(rom_label);
-            Controls.Add(romvelger_label);
+            Controls.Add(listofjobs);
+            Controls.Add(button1);
+            Controls.Add(label1);
             Margin = new Padding(4, 5, 4, 5);
-            Name = "Rom";
+            Name = "Maintenence";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ResumeLayout(false);
@@ -173,16 +81,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label romvelger_label;
-        private System.Windows.Forms.Label rom_label;
-        private System.Windows.Forms.ListBox romvelger_listebox;
-        private System.Windows.Forms.ListView rom_liste;
-        private System.Windows.Forms.Label status_label;
-        private System.Windows.Forms.ListView status_liste;
-        private System.Windows.Forms.ListView reservasjonsliste_liste;
-        private System.Windows.Forms.Label reservasjonsliste_label;
-        private System.Windows.Forms.ListView tidsrom_liste;
-        private System.Windows.Forms.Label tidsrom_label;
-        private System.Windows.Forms.Button backButton;
+
+        private Label label1;
+        private Button button1;
+        private ListView listofjobs;
     }
 }

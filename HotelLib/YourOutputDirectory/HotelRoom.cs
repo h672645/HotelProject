@@ -17,6 +17,11 @@ public partial class HotelRoom
 
     public virtual ICollection<HotelReservation> HotelReservations { get; set; } = new List<HotelReservation>();
 
+    public override string ToString()
+    {
+        return RoomId.ToString();
+    }
+
     public bool IsReservationActive(DateTime currentDate, DateTime StartDate, DateTime EndDate)
     {
         if (this == null)
