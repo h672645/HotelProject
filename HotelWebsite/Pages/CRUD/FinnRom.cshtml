@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Finn Rom";
 }
+@inject UserManager<IdentityUser> UserManager
 
 <h1>FinnRom</h1>
 
@@ -24,19 +25,19 @@
                 <span asp-validation-for="HotelReservation.EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HotelRoom.NumberOfBeds" class="control-label"></label>
-                <input asp-for="HotelRoom.NumberOfBeds" class="form-control" type="number"/>
-                <span asp-validation-for="HotelRoom.NumberOfBeds" class="text-danger"></span>
+                <label asp-for="hotelRoom.NumberOfBeds" class="control-label"></label>
+                <input asp-for="hotelRoom.NumberOfBeds" class="form-control" type="number"/>
+                <span asp-validation-for="hotelRoom.NumberOfBeds" class="text-danger"></span>
             </div>
             <div>
-                <label asp-for="HotelRoom.QualityOfRoom" class="control-label"></label>
-                <input asp-for="HotelRoom.QualityOfRoom" class="form-control"/>
-                <span asp-validation-for="HotelRoom.QualityOfRoom" class="text-danger"></span>
+                <label asp-for="hotelRoom.QualityOfRoom" class="control-label"></label>
+                <input asp-for="hotelRoom.QualityOfRoom" class="form-control" type="text"/>
+                <span asp-validation-for="hotelRoom.QualityOfRoom" class="text-danger"></span>
             </div>
             <div>
-                <label asp-for="HotelRoom.SizeOfRoom" class="control-label"></label>
-                <input asp-for="HotelRoom.SizeOfRoom" class="form-control" type="number" />
-                <span asp-validation-for="HotelRoom.SizeOfRoom" class="text-danger"></span>
+                <label asp-for="hotelRoom.SizeOfRoom" class="control-label"></label>
+                <input asp-for="hotelRoom.SizeOfRoom" class="form-control" type="number" />
+                <span asp-validation-for="hotelRoom.SizeOfRoom" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Sok etter rom" class="btn btn-primary" />
