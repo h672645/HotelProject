@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HotelComputer
 {
-    public partial class Rom : Form
+    public partial class Maintenence : Form
     {
-        public Rom()
+        public Maintenence()
         {
             InitializeComponent();
         }

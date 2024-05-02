@@ -33,6 +33,9 @@ namespace YourNamespace
             {
                 int selectedRoomId = (int)romvelger_listebox.SelectedItem; 
                 HotelRoom valgtHotellrom = hotelRooms.FirstOrDefault(r => r.RoomId == selectedRoomId);
+                tidsrom_liste.Items.Clear();
+                tidsrom_liste2.Items.Clear();
+                reservasjonsliste_liste.Items.Clear();
 
                 if (valgtHotellrom != null)
                 {
@@ -41,6 +44,8 @@ namespace YourNamespace
                         if (hotellreservasjon.RoomId == valgtHotellrom.RoomId)
                         {
                             reservasjonsliste_liste.Items.Add(hotellreservasjon);
+                            tidsrom_liste.Items.Add(hotellreservasjon.StartDate);
+                            tidsrom_liste2.Items.Add(hotellreservasjon.EndDate);
                             valgtHotellrom.sjekk((DateTime)hotellreservasjon.StartDate, (DateTime)hotellreservasjon.EndDate);
                         }
                     }

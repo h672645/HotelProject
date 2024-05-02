@@ -1,6 +1,6 @@
 ﻿namespace HotelComputer
 {
-    partial class Rom
+    partial class Maintenence
     {
         /// <summary>
         /// Required designer variable.

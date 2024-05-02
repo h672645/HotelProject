@@ -29,11 +29,7 @@ namespace HotelComputer
             // Populate ListView with roomService data
             foreach (var serv in roomServices)
             {
-                // Create ListViewItem with RoomID and Tjeneste values
-                ListViewItem item = new ListViewItem(new[] { serv.RoomId.ToString(), serv.Tjeneste });
-
-                // Add the ListViewItem to the ListView
-                listofjobs.Items.Add(item);
+                listofjobs.Items.Add(serv.ToString());
             }
         }
         private void backButton_Click(object sender, EventArgs e)

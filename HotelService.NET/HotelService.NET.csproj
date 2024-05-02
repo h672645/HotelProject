@@ -28,7 +28,7 @@
     <Compile Update="Reservasjoner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Rom.cs">
+    <Compile Update="Maintenence.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

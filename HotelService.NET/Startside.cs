@@ -7,7 +7,7 @@ namespace HotelComputer
     public partial class Startside : Form
     {
         private Reservasjoner reservasjonerForm;
-        private Rom romForm;
+        private Maintenence romForm;
         private Service nyReservasjonForm;
 
         public Startside()
@@ -16,7 +16,7 @@ namespace HotelComputer
 
             // Initialize forms
             reservasjonerForm = new Reservasjoner();
-            romForm = new Rom();
+            romForm = new Maintenence();
             nyReservasjonForm = new Service();
             reservasjonerForm.FormClosed += (s, args) => Show();
             romForm.FormClosed += (s, args) => Show();
@@ -54,7 +54,7 @@ namespace HotelComputer
             // Recreate the Room form if it's disposed
             if (romForm == null || romForm.IsDisposed)
             {
-                romForm = new Rom();
+                romForm = new Maintenence();
                 romForm.FormClosed += (s, args) => Show();
             }
 

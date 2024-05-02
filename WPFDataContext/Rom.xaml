@@ -6,13 +6,15 @@
         <Label Content="Rom-Velger:" HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.439,0.403"/>
         <Label Content="Valgt Rom:" HorizontalAlignment="Left" Margin="99,12,0,0" VerticalAlignment="Top"/>
         <Label Content="Status:" HorizontalAlignment="Left" Margin="99,211,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tilhørende reservasjoner" HorizontalAlignment="Left" Margin="534,5,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tids-rom:" HorizontalAlignment="Left" Margin="691,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="Reserverte i/fra:" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top"/>
+        <Label Content="Start-Dato:" HorizontalAlignment="Left" Margin="556,13,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="romvelger_listebox" HorizontalAlignment="Left" Height="394" Margin="10,30,0,0" VerticalAlignment="Top" Width="63"/>
         <ListView x:Name="rom_liste" HorizontalAlignment="Left" Height="170" Margin="99,36,0,0" VerticalAlignment="Top" Width="122"/>
         <ListView x:Name="status_liste" HorizontalAlignment="Left" Height="22" Margin="99,237,0,0" VerticalAlignment="Top" Width="122"/>
-        <ListView x:Name="reservasjonsliste_liste" HorizontalAlignment="Left" Height="265" Margin="542,30,0,0" VerticalAlignment="Top" Width="123"/>
-        <ListView x:Name="tidsrom_liste" HorizontalAlignment="Left" Height="265" Margin="672,30,0,0" VerticalAlignment="Top" Width="99"/>
+        <ListView x:Name="reservasjonsliste_liste" HorizontalAlignment="Center" Height="168" Margin="0,38,0,0" VerticalAlignment="Top" Width="202"/>
+        <ListView x:Name="tidsrom_liste" HorizontalAlignment="Left" Height="168" Margin="526,38,0,0" VerticalAlignment="Top" Width="127"/>
         <Button Content="Tilbake" HorizontalAlignment="Left" Margin="579,396,0,0" VerticalAlignment="Top" Width="192" Click="backButton_Click"/>
+        <ListView x:Name="tidsrom_liste2" HorizontalAlignment="Left" Height="168" Margin="658,38,0,0" VerticalAlignment="Top" Width="127"/>
+        <Label Content="Slutt-Dato:" HorizontalAlignment="Left" Margin="688,12,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
