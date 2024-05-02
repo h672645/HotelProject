@@ -8,9 +8,9 @@ namespace HotelComputer
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button service_button;
-        private System.Windows.Forms.Button maintenence_button;
         private System.Windows.Forms.Button cleaning_button;
+        private System.Windows.Forms.Button maintenence_button;
+        private System.Windows.Forms.Button service_button;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -33,29 +33,29 @@ namespace HotelComputer
         /// </summary>
         private void InitializeComponent()
         {
-            service_button = new Button();
-            maintenence_button = new Button();
             cleaning_button = new Button();
+            maintenence_button = new Button();
+            service_button = new Button();
             SuspendLayout();
             // 
-            // service_button
+            // cleaning_button
             // 
-            service_button.BackColor = SystemColors.Control;
-            service_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            service_button.Location = new Point(14, 14);
-            service_button.Margin = new Padding(4, 4, 4, 4);
-            service_button.Name = "service_button";
-            service_button.Size = new Size(262, 491);
-            service_button.TabIndex = 0;
-            service_button.Text = "Maintenance";
-            service_button.UseVisualStyleBackColor = true;
-            service_button.Click += service_button_Click;
+            cleaning_button.BackColor = SystemColors.Control;
+            cleaning_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cleaning_button.Location = new Point(14, 14);
+            cleaning_button.Margin = new Padding(4);
+            cleaning_button.Name = "cleaning_button";
+            cleaning_button.Size = new Size(262, 491);
+            cleaning_button.TabIndex = 0;
+            cleaning_button.Text = "Maintenance";
+            cleaning_button.UseVisualStyleBackColor = true;
+            cleaning_button.Click += service_button_Click;
             // 
             // maintenence_button
             // 
             maintenence_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             maintenence_button.Location = new Point(339, 14);
-            maintenence_button.Margin = new Padding(4, 4, 4, 4);
+            maintenence_button.Margin = new Padding(4);
             maintenence_button.Name = "maintenence_button";
             maintenence_button.Size = new Size(262, 491);
             maintenence_button.TabIndex = 2;
@@ -63,27 +63,27 @@ namespace HotelComputer
             maintenence_button.UseVisualStyleBackColor = true;
             maintenence_button.Click += maintenence_button_Click;
             // 
-            // cleaning_button
+            // service_button
             // 
-            cleaning_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cleaning_button.Location = new Point(657, 14);
-            cleaning_button.Margin = new Padding(4, 4, 4, 4);
-            cleaning_button.Name = "cleaning_button";
-            cleaning_button.Size = new Size(262, 491);
-            cleaning_button.TabIndex = 3;
-            cleaning_button.Text = "Cleaning";
-            cleaning_button.UseVisualStyleBackColor = true;
-            cleaning_button.Click += cleaning_button_Click;
+            service_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            service_button.Location = new Point(657, 14);
+            service_button.Margin = new Padding(4);
+            service_button.Name = "service_button";
+            service_button.Size = new Size(262, 491);
+            service_button.TabIndex = 3;
+            service_button.Text = "Service";
+            service_button.UseVisualStyleBackColor = true;
+            service_button.Click += cleaning_button_Click;
             // 
             // Startside
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 519);
-            Controls.Add(cleaning_button);
-            Controls.Add(maintenence_button);
             Controls.Add(service_button);
-            Margin = new Padding(4, 4, 4, 4);
+            Controls.Add(maintenence_button);
+            Controls.Add(cleaning_button);
+            Margin = new Padding(4);
             Name = "Startside";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
