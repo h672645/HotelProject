@@ -17,9 +17,9 @@ public partial class HotelRoom
 
     public virtual ICollection<HotelReservation> HotelReservations { get; set; } = new List<HotelReservation>();
 
-    public string sjekk(DateTime StartDate, DateTime EndDate)
+    public bool sjekk(DateTime StartDate, DateTime EndDate)
     {
-        return IsReservationActive(StartDate, EndDate) == true ? $"Opptatt" : $"Ledig";
+        return IsReservationActive(StartDate, EndDate) == true ? true : false;
     }
 
     public string sjekk()
