@@ -29,6 +29,8 @@ public partial class MyFirstDatabaseContext : DbContext
 
     public virtual DbSet<Person> People { get; set; }
 
+    public virtual DbSet<RoomService> RoomServices { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=tcp:h672645.database.windows.net,1433;Initial Catalog=MyFirstDatabase;Persist Security Info=False;User ID=h672645;Password=4ak96a2bb5A;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
@@ -90,17 +92,22 @@ public partial class MyFirstDatabaseContext : DbContext
 
         modelBuilder.Entity<HotelReservation>(entity =>
         {
-            entity.HasKey(e => e.ReservationId).HasName("PK__HotelRes__B7EE5F245ED63343");
+            entity.HasKey(e => e.ReservationId).HasName("PK__HotelRes__B7EE5F24A324BFC7");
 
             entity.ToTable("HotelReservation");
 
+            entity.Property(e => e.ReservationId).ValueGeneratedNever();
+            entity.Property(e => e.EndDate).HasColumnType("datetime");
+            entity.Property(e => e.StartDate).HasColumnType("datetime");
+
             entity.HasOne(d => d.Guest).WithMany(p => p.HotelReservations)
                 .HasForeignKey(d => d.GuestId)
-                .HasConstraintName("FK__HotelRese__Guest__6EF57B66");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Guest");
 
             entity.HasOne(d => d.Room).WithMany(p => p.HotelReservations)
                 .HasForeignKey(d => d.RoomId)
-                .HasConstraintName("FK__HotelRese__RoomI__6FE99F9F");
+                .HasConstraintName("FK_Room");
         });
 
         modelBuilder.Entity<HotelRoom>(entity =>
@@ -120,6 +127,18 @@ public partial class MyFirstDatabaseContext : DbContext
 
             entity.Property(e => e.Etternavn).HasMaxLength(50);
             entity.Property(e => e.Fornavn).HasMaxLength(50);
+        });
+
+        modelBuilder.Entity<RoomService>(entity =>
+        {
+            entity.HasKey(e => e.RoomId).HasName("PK__RoomServ__32863939AC35DC6D");
+
+            entity.ToTable("RoomService");
+
+            entity.Property(e => e.RoomId).ValueGeneratedNever();
+            entity.Property(e => e.Tjeneste)
+                .HasMaxLength(255)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
