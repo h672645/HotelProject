@@ -21,4 +21,16 @@
     <ProjectReference Include="..\HotelLib\HotelClasses.NET.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="NyReservasjon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reservasjoner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Rom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

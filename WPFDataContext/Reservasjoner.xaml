@@ -5,13 +5,11 @@
         Title="Reservasjoner" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <ListView x:Name="reservasjonsliste_liste" HorizontalAlignment="Left" Height="373" Margin="10,33,0,0" VerticalAlignment="Top" Width="241"/>
-        <DatePicker x:Name="start_dato_selector" HorizontalAlignment="Left" Margin="287,53,0,0" VerticalAlignment="Top" Width="128"/>
-        <DatePicker x:Name="slutt_dato_selector" HorizontalAlignment="Left" Margin="287,124,0,0" VerticalAlignment="Top" SelectedDate="2025-04-30" Width="128"/>
-        <Label Content="Start-Dato" HorizontalAlignment="Left" Margin="287,27,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="start_dato_selector" HorizontalAlignment="Left" Margin="270,58,0,0" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Start-Dato" HorizontalAlignment="Left" Margin="270,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Reservasjonsliste" HorizontalAlignment="Left" Margin="43,7,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="search_button" Content="Søk" HorizontalAlignment="Left" Margin="426,126,0,0" VerticalAlignment="Top" Width="136"/>
-        <Label Content="Slutt-Dato" HorizontalAlignment="Left" Margin="287,98,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="backButton" Content="Tilbake" HorizontalAlignment="Left" Margin="596,396,0,0" VerticalAlignment="Top" Width="192" Click="backButton_Click"/>
+        <Button x:Name="search_button" Content="Søk" HorizontalAlignment="Left" Margin="417,60,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.291,0.701" Click="search_button_Click"/>
+        <Button x:Name="backButton" Content="Tilbake" HorizontalAlignment="Left" Margin="584,386,0,0" VerticalAlignment="Top" Width="192" Click="backButton_Click"/>
         <DataGrid x:Name="reservasjon" Margin="266,167,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="488" AutoGenerateColumns="False" IsReadOnly="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Reservation ID" Binding="{Binding ReservationId}" Width="Auto" />

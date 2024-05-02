@@ -16,7 +16,6 @@ namespace YourNamespace
             InitializeComponent();
 
             start_dato_selector.SelectedDate = DateTime.Today;
-            slutt_dato_selector.SelectedDate = DateTime.Today.AddYears(1);
 
             foreach (var reservation in dx.HotelReservations)
             {
@@ -29,9 +28,6 @@ namespace YourNamespace
             reservasjonsliste_liste.ItemsSource = hotelReservations;
 
             reservasjonsliste_liste.SelectionChanged += Reservasjonsliste_liste_SelectionChanged;
-            
-            start_dato_selector.SelectedDateChanged += DateSelector_SelectedDateChanged;
-            slutt_dato_selector.SelectedDateChanged += DateSelector_SelectedDateChanged;
 
             FilterReservations();
         }
@@ -52,11 +48,6 @@ namespace YourNamespace
             roomComboBox.ItemsSource = hotelRooms;
             roomComboBox.DisplayMemberPath = "RoomId";
         }
-
-        private void DateSelector_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            FilterReservations();
-        }
         private void Reservasjonsliste_liste_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             reservasjon.Items.Clear();
@@ -72,13 +63,8 @@ namespace YourNamespace
         private void FilterReservations()
         {
             DateTime startDate = start_dato_selector.SelectedDate ?? DateTime.MinValue;
-            DateTime endDate = slutt_dato_selector.SelectedDate ?? DateTime.MaxValue;
 
-            var filteredReservations = dx.HotelReservations.Where(r =>
-                (r.StartDate >= startDate && r.StartDate <= endDate) ||  
-                (r.EndDate >= startDate && r.EndDate <= endDate) ||      
-                (r.StartDate <= startDate && r.EndDate >= endDate)       
-            );
+            var filteredReservations = dx.HotelReservations.Where(r => r.StartDate >= startDate.Date);
 
             hotelReservations.Clear();
             foreach (var reservation in filteredReservations)
@@ -130,6 +116,9 @@ namespace YourNamespace
                         FilterReservations();
                         UpdateRoomOccupancyStatus();
                         checkBoxUpdate();
+                        reservasjon.Items.Clear();
+                        reservasjon.Items.Add(selectedReservation);
+
                     }
                     else
                     {
@@ -173,5 +162,9 @@ namespace YourNamespace
             dx.SaveChanges();
         }
 
+        private void search_button_Click(object sender, RoutedEventArgs e)
+        {
+            FilterReservations();
+        }
     }
 }
