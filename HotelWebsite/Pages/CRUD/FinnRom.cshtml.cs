@@ -50,7 +50,8 @@ namespace HotelWebsite.NET.Pages.CRUD
             HotelReservation.GuestId = guestId;
             if(_context.HotelRooms.Any(h => hotelRoom.QualityOfRoom==h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied==false)) {
                 Guest gjesten = new Guest();
-                gjesten.GuestId = 3;
+                Random random = new Random();
+                gjesten.GuestId = random.Next(1,150);
                 if (_context.HotelRooms.Any(h => h.HotelReservations.Any(r => r.StartDate <= HotelReservation.StartDate && r.EndDate >= HotelReservation.EndDate)))
                 {
                     errormessage = "rommet er optatt i den tiden";
