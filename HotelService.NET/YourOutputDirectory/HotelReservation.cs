@@ -11,9 +11,9 @@ public partial class HotelReservation
 
     public int? RoomId { get; set; }
 
-    public DateOnly? StartDate { get; set; }
+    public DateTime? StartDate { get; set; }
 
-    public DateOnly? EndDate { get; set; }
+    public DateTime? EndDate { get; set; }
 
     public virtual Guest? Guest { get; set; }
 
