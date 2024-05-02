@@ -50,7 +50,6 @@ namespace HotelComputer
             // 
             listofjobs.Location = new Point(129, 98);
             listofjobs.Name = "listofjobs";
-            listofjobs.Columns.Add("column1", 300);
             listofjobs.Size = new Size(700, 400);
             listofjobs.TabIndex = 100;
             listofjobs.UseCompatibleStateImageBehavior = false;

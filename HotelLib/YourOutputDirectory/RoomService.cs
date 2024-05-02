@@ -11,6 +11,6 @@ public partial class RoomService
 
     public override string ToString()
     {
-        return RoomId.ToString() + "er rommet (" + Tjeneste + ")";
+        return RoomId.ToString() + "er rommet (" + Tjeneste + ") /n";
     }
 }

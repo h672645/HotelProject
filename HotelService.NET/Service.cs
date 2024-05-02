@@ -30,7 +30,9 @@ namespace HotelComputer
 
                 listofjobs.Items.Add(serv.ToString());
 
+
             }
+
         }
         private void backButton_Click(object sender, EventArgs e)
         {
