@@ -17,6 +17,8 @@ public partial class MyFirstDatabaseContext : DbContext
 
     public virtual DbSet<Admin> Admins { get; set; }
 
+    public virtual DbSet<CleaningList> CleaningLists { get; set; }
+
     public virtual DbSet<Employee> Employees { get; set; }
 
     public virtual DbSet<Guest> Guests { get; set; }
@@ -49,6 +51,13 @@ public partial class MyFirstDatabaseContext : DbContext
                 .HasForeignKey<Admin>(d => d.AdminId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Admin__AdminId__68487DD7");
+        });
+
+        modelBuilder.Entity<CleaningList>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("CleaningList");
         });
 
         modelBuilder.Entity<Employee>(entity =>

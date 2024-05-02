@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelService.NET\HotelService.NET.csproj" />
+    <ProjectReference Include="..\HotelLib\HotelClasses.NET.csproj" />
   </ItemGroup>
 
 </Project>
