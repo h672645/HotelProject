@@ -16,14 +16,18 @@ namespace HotelComputer
     {
         private MyFirstDatabaseContext dx = new();
         private ObservableCollection<HotelRoom> rooms = new ObservableCollection<HotelRoom>();
+        private ObservableCollection<CleaningList> roomsToClean = new ObservableCollection<CleaningList>();
         public Maintenence()
         {
-
-            foreach (var room in dx.HotelRooms)
-            {
-                rooms.Add(room);
-            }
             InitializeComponent();
+
+            foreach (var roomToClean in dx.CleaningLists)
+            {
+                roomsToClean.Add(roomToClean);
+
+            }
+
+            listofjobs.DataSource = roomsToClean;
         }
 
         private void listView3_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,5 +50,9 @@ namespace HotelComputer
             Close();
         }
 
+        private void backButton_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

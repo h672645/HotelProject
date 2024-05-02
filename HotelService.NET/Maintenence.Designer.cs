@@ -29,53 +29,52 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            listofjobs = new ListView();
+            backButton = new Button();
+            listofjobs = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listofjobs).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(126, 44);
+            label1.Location = new Point(110, 33);
             label1.Name = "label1";
-            label1.Size = new Size(67, 20);
+            label1.Size = new Size(54, 15);
             label1.TabIndex = 0;
             label1.Text = "Cleaning";
             // 
-            // button1
+            // backButton
             // 
-            button1.Location = new Point(742, 303);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Return";
-            button1.UseVisualStyleBackColor = true;
+            backButton.Location = new Point(697, 457);
+            backButton.Margin = new Padding(4);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(224, 49);
+            backButton.TabIndex = 101;
+            backButton.Text = "Tilbake";
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click_1;
             // 
             // listofjobs
             // 
-            listofjobs.Location = new Point(113, 74);
-            listofjobs.Margin = new Padding(3, 2, 3, 2);
+            listofjobs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listofjobs.Location = new Point(74, 71);
             listofjobs.Name = "listofjobs";
-            listofjobs.Size = new Size(613, 301);
-            listofjobs.TabIndex = 100;
-            listofjobs.UseCompatibleStateImageBehavior = false;
-            listofjobs.View = View.Details;
-
-            // Add columns to the ListView
-            listofjobs.Columns.Add("RoomNummer", 100); // Width set to 100 pixels, adjust as needed
-            listofjobs.Columns.Add("SkalVaskes", 500); // Width set to 500 pixels, adjust as needed
+            listofjobs.Size = new Size(607, 284);
+            listofjobs.TabIndex = 102;
+            // 
             // Maintenence
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 692);
+            ClientSize = new Size(934, 519);
             Controls.Add(listofjobs);
-            Controls.Add(button1);
+            Controls.Add(backButton);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4);
             Name = "Maintenence";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)listofjobs).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -83,7 +82,7 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private ListView listofjobs;
+        private Button backButton;
+        private DataGridView listofjobs;
     }
 }

@@ -39,12 +39,12 @@ namespace YourNamespace
             {
                 foreach(var reservasjon in hotelReservations)
                 {
-                    if(!room.sjekk((DateTime)reservasjon.StartDate, (DateTime)reservasjon.EndDate))
+                    if(hotelReservations.Contains(room) && !room.sjekk((DateTime)reservasjon.StartDate, (DateTime)reservasjon.EndDate))
                     {
                         hotelRooms.Add(room);
                     }
                 }
-                    
+
                 
             }
             dx.SaveChanges();
