@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="NyReservasjon.cs">
+    <Compile Update="Service.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Reservasjoner.cs">

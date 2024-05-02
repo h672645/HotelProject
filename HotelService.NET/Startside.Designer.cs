@@ -8,9 +8,9 @@ namespace HotelComputer
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button reservation_button;
-        private System.Windows.Forms.Button room_button;
-        private System.Windows.Forms.Button nyReservation_button;
+        private System.Windows.Forms.Button service_button;
+        private System.Windows.Forms.Button maintenence_button;
+        private System.Windows.Forms.Button cleaning_button;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -33,58 +33,61 @@ namespace HotelComputer
         /// </summary>
         private void InitializeComponent()
         {
-            this.reservation_button = new System.Windows.Forms.Button();
-            this.room_button = new System.Windows.Forms.Button();
-            this.nyReservation_button = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            service_button = new Button();
+            maintenence_button = new Button();
+            cleaning_button = new Button();
+            SuspendLayout();
             // 
-            // reservation_button
+            // service_button
             // 
-            this.reservation_button.BackColor = System.Drawing.SystemColors.Control;
-            this.reservation_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservation_button.Location = new System.Drawing.Point(12, 12);
-            this.reservation_button.Name = "reservation_button";
-            this.reservation_button.Size = new System.Drawing.Size(225, 426);
-            this.reservation_button.TabIndex = 0;
-            this.reservation_button.Text = "Reservasjoner";
-            this.reservation_button.UseVisualStyleBackColor = true;
-            this.reservation_button.Click += new System.EventHandler(this.reservation_button_Click);
+            service_button.BackColor = SystemColors.Control;
+            service_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            service_button.Location = new Point(16, 18);
+            service_button.Margin = new Padding(4, 5, 4, 5);
+            service_button.Name = "service_button";
+            service_button.Size = new Size(300, 655);
+            service_button.TabIndex = 0;
+            service_button.Text = "Service";
+            service_button.UseVisualStyleBackColor = true;
+            service_button.Click += service_button_Click;
             // 
-            // room_button
+            // maintenence_button
             // 
-            this.room_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_button.Location = new System.Drawing.Point(290, 12);
-            this.room_button.Name = "room_button";
-            this.room_button.Size = new System.Drawing.Size(225, 426);
-            this.room_button.TabIndex = 2;
-            this.room_button.Text = "Rom";
-            this.room_button.UseVisualStyleBackColor = true;
-            this.room_button.Click += new System.EventHandler(this.room_button_Click);
+            maintenence_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            maintenence_button.Location = new Point(387, 18);
+            maintenence_button.Margin = new Padding(4, 5, 4, 5);
+            maintenence_button.Name = "maintenence_button";
+            maintenence_button.Size = new Size(300, 655);
+            maintenence_button.TabIndex = 2;
+            maintenence_button.Text = "Maintenence";
+            maintenence_button.UseVisualStyleBackColor = true;
+            maintenence_button.Click += maintenence_button_Click;
             // 
-            // nyReservation_button
+            // cleaning_button
             // 
-            this.nyReservation_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nyReservation_button.Location = new System.Drawing.Point(563, 12);
-            this.nyReservation_button.Name = "nyReservation_button";
-            this.nyReservation_button.Size = new System.Drawing.Size(225, 426);
-            this.nyReservation_button.TabIndex = 3;
-            this.nyReservation_button.Text = "Ny Reservasjon";
-            this.nyReservation_button.UseVisualStyleBackColor = true;
-            this.nyReservation_button.Click += new System.EventHandler(this.nyReservation_button_Click_1);
+            cleaning_button.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cleaning_button.Location = new Point(751, 18);
+            cleaning_button.Margin = new Padding(4, 5, 4, 5);
+            cleaning_button.Name = "cleaning_button";
+            cleaning_button.Size = new Size(300, 655);
+            cleaning_button.TabIndex = 3;
+            cleaning_button.Text = "Cleaning";
+            cleaning_button.UseVisualStyleBackColor = true;
+            cleaning_button.Click += cleaning_button_Click;
             // 
             // Startside
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.nyReservation_button);
-            this.Controls.Add(this.room_button);
-            this.Controls.Add(this.reservation_button);
-            this.Name = "Startside";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1067, 692);
+            Controls.Add(cleaning_button);
+            Controls.Add(maintenence_button);
+            Controls.Add(service_button);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "Startside";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion

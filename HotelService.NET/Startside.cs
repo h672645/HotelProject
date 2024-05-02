@@ -8,7 +8,7 @@ namespace HotelComputer
     {
         private Reservasjoner reservasjonerForm;
         private Rom romForm;
-        private NyReservasjon nyReservasjonForm;
+        private Service nyReservasjonForm;
 
         public Startside()
         {
@@ -17,7 +17,7 @@ namespace HotelComputer
             // Initialize forms
             reservasjonerForm = new Reservasjoner();
             romForm = new Rom();
-            nyReservasjonForm = new NyReservasjon();
+            nyReservasjonForm = new Service();
             reservasjonerForm.FormClosed += (s, args) => Show();
             romForm.FormClosed += (s, args) => Show();
             nyReservasjonForm.FormClosed += (s, args) => Show();
@@ -27,17 +27,13 @@ namespace HotelComputer
         {
             if (nyReservasjonForm == null || nyReservasjonForm.IsDisposed)
             {
-                nyReservasjonForm = new NyReservasjon();
+                nyReservasjonForm = new Service();
                 nyReservasjonForm.FormClosed += (s, args) => Show();
             }
             Hide();
             nyReservasjonForm.Show();
         }
 
-        private void nyReservation_button_Click(object sender, EventArgs e)
-        {
-            ShowNyReservationForm();
-        }
 
 
         private void ShowReservasjonerForm()
@@ -67,17 +63,17 @@ namespace HotelComputer
             romForm.Show();
         }
 
-        private void reservation_button_Click(object sender, EventArgs e)
+        private void service_button_Click(object sender, EventArgs e)
         {
             ShowReservasjonerForm();
         }
 
-        private void room_button_Click(object sender, EventArgs e)
+        private void cleaning_button_Click(object sender, EventArgs e)
         {
             ShowRoomForm();
         }
 
-        private void nyReservation_button_Click_1(object sender, EventArgs e)
+        private void maintenence_button_Click(object sender, EventArgs e)
         {
             ShowNyReservationForm();
         }

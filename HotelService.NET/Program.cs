@@ -15,5 +15,6 @@ namespace HotelService.NET
             ApplicationConfiguration.Initialize();
             Application.Run(new Startside());
         }
+
     }
 }

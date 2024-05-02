@@ -28,141 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.romvelger_label = new System.Windows.Forms.Label();
-            this.rom_label = new System.Windows.Forms.Label();
-            this.romvelger_listebox = new System.Windows.Forms.ListBox();
-            this.rom_liste = new System.Windows.Forms.ListView();
-            this.status_label = new System.Windows.Forms.Label();
-            this.status_liste = new System.Windows.Forms.ListView();
-            this.reservasjonsliste_liste = new System.Windows.Forms.ListView();
-            this.reservasjonsliste_label = new System.Windows.Forms.Label();
-            this.tidsrom_liste = new System.Windows.Forms.ListView();
-            this.tidsrom_label = new System.Windows.Forms.Label();
-            this.backButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            romvelger_label = new Label();
+            rom_label = new Label();
+            romvelger_listebox = new ListBox();
+            rom_liste = new ListView();
+            status_label = new Label();
+            status_liste = new ListView();
+            reservasjonsliste_liste = new ListView();
+            reservasjonsliste_label = new Label();
+            tidsrom_liste = new ListView();
+            tidsrom_label = new Label();
+            backButton = new Button();
+            SuspendLayout();
             // 
             // romvelger_label
             // 
-            this.romvelger_label.AutoSize = true;
-            this.romvelger_label.Location = new System.Drawing.Point(13, 28);
-            this.romvelger_label.Name = "romvelger_label";
-            this.romvelger_label.Size = new System.Drawing.Size(65, 13);
-            this.romvelger_label.TabIndex = 1;
-            this.romvelger_label.Text = "Rom-Velger:";
+            romvelger_label.AutoSize = true;
+            romvelger_label.Location = new Point(17, 43);
+            romvelger_label.Margin = new Padding(4, 0, 4, 0);
+            romvelger_label.Name = "romvelger_label";
+            romvelger_label.Size = new Size(91, 20);
+            romvelger_label.TabIndex = 1;
+            romvelger_label.Text = "Rom-Velger:";
             // 
             // rom_label
             // 
-            this.rom_label.AutoSize = true;
-            this.rom_label.Location = new System.Drawing.Point(177, 31);
-            this.rom_label.Name = "rom_label";
-            this.rom_label.Size = new System.Drawing.Size(32, 13);
-            this.rom_label.TabIndex = 3;
-            this.rom_label.Text = "Rom:";
+            rom_label.AutoSize = true;
+            rom_label.Location = new Point(236, 48);
+            rom_label.Margin = new Padding(4, 0, 4, 0);
+            rom_label.Name = "rom_label";
+            rom_label.Size = new Size(43, 20);
+            rom_label.TabIndex = 3;
+            rom_label.Text = "Rom:";
             // 
             // romvelger_listebox
             // 
-            this.romvelger_listebox.FormattingEnabled = true;
-            this.romvelger_listebox.Location = new System.Drawing.Point(12, 47);
-            this.romvelger_listebox.Name = "romvelger_listebox";
-            this.romvelger_listebox.Size = new System.Drawing.Size(63, 394);
-            this.romvelger_listebox.TabIndex = 4;
-            this.romvelger_listebox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            romvelger_listebox.FormattingEnabled = true;
+            romvelger_listebox.Location = new Point(16, 72);
+            romvelger_listebox.Margin = new Padding(4, 5, 4, 5);
+            romvelger_listebox.Name = "romvelger_listebox";
+            romvelger_listebox.Size = new Size(83, 604);
+            romvelger_listebox.TabIndex = 4;
+            romvelger_listebox.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // rom_liste
             // 
-            this.rom_liste.HideSelection = false;
-            this.rom_liste.Location = new System.Drawing.Point(180, 47);
-            this.rom_liste.Name = "rom_liste";
-            this.rom_liste.Size = new System.Drawing.Size(121, 97);
-            this.rom_liste.TabIndex = 5;
-            this.rom_liste.UseCompatibleStateImageBehavior = false;
+            rom_liste.Location = new Point(236, 94);
+            rom_liste.Margin = new Padding(4, 5, 4, 5);
+            rom_liste.Name = "rom_liste";
+            rom_liste.Size = new Size(160, 147);
+            rom_liste.TabIndex = 5;
+            rom_liste.UseCompatibleStateImageBehavior = false;
             // 
             // status_label
             // 
-            this.status_label.AutoSize = true;
-            this.status_label.Location = new System.Drawing.Point(180, 198);
-            this.status_label.Name = "status_label";
-            this.status_label.Size = new System.Drawing.Size(40, 13);
-            this.status_label.TabIndex = 6;
-            this.status_label.Text = "Status:";
+            status_label.AutoSize = true;
+            status_label.Location = new Point(240, 305);
+            status_label.Margin = new Padding(4, 0, 4, 0);
+            status_label.Name = "status_label";
+            status_label.Size = new Size(52, 20);
+            status_label.TabIndex = 6;
+            status_label.Text = "Status:";
             // 
             // status_liste
             // 
-            this.status_liste.HideSelection = false;
-            this.status_liste.Location = new System.Drawing.Point(180, 215);
-            this.status_liste.Name = "status_liste";
-            this.status_liste.Size = new System.Drawing.Size(121, 97);
-            this.status_liste.TabIndex = 7;
-            this.status_liste.UseCompatibleStateImageBehavior = false;
+            status_liste.Location = new Point(240, 331);
+            status_liste.Margin = new Padding(4, 5, 4, 5);
+            status_liste.Name = "status_liste";
+            status_liste.Size = new Size(160, 147);
+            status_liste.TabIndex = 7;
+            status_liste.UseCompatibleStateImageBehavior = false;
             // 
             // reservasjonsliste_liste
             // 
-            this.reservasjonsliste_liste.HideSelection = false;
-            this.reservasjonsliste_liste.Location = new System.Drawing.Point(542, 47);
-            this.reservasjonsliste_liste.Name = "reservasjonsliste_liste";
-            this.reservasjonsliste_liste.Size = new System.Drawing.Size(123, 265);
-            this.reservasjonsliste_liste.TabIndex = 8;
-            this.reservasjonsliste_liste.UseCompatibleStateImageBehavior = false;
+            reservasjonsliste_liste.Location = new Point(723, 72);
+            reservasjonsliste_liste.Margin = new Padding(4, 5, 4, 5);
+            reservasjonsliste_liste.Name = "reservasjonsliste_liste";
+            reservasjonsliste_liste.Size = new Size(163, 406);
+            reservasjonsliste_liste.TabIndex = 8;
+            reservasjonsliste_liste.UseCompatibleStateImageBehavior = false;
             // 
             // reservasjonsliste_label
             // 
-            this.reservasjonsliste_label.AutoSize = true;
-            this.reservasjonsliste_label.Location = new System.Drawing.Point(539, 31);
-            this.reservasjonsliste_label.Name = "reservasjonsliste_label";
-            this.reservasjonsliste_label.Size = new System.Drawing.Size(123, 13);
-            this.reservasjonsliste_label.TabIndex = 9;
-            this.reservasjonsliste_label.Text = "Tilhørende reservasjoner";
+            reservasjonsliste_label.AutoSize = true;
+            reservasjonsliste_label.Location = new Point(719, 48);
+            reservasjonsliste_label.Margin = new Padding(4, 0, 4, 0);
+            reservasjonsliste_label.Name = "reservasjonsliste_label";
+            reservasjonsliste_label.Size = new Size(171, 20);
+            reservasjonsliste_label.TabIndex = 9;
+            reservasjonsliste_label.Text = "Tilhørende reservasjoner";
             // 
             // tidsrom_liste
             // 
-            this.tidsrom_liste.HideSelection = false;
-            this.tidsrom_liste.Location = new System.Drawing.Point(672, 47);
-            this.tidsrom_liste.Name = "tidsrom_liste";
-            this.tidsrom_liste.Size = new System.Drawing.Size(99, 265);
-            this.tidsrom_liste.TabIndex = 10;
-            this.tidsrom_liste.UseCompatibleStateImageBehavior = false;
+            tidsrom_liste.Location = new Point(896, 72);
+            tidsrom_liste.Margin = new Padding(4, 5, 4, 5);
+            tidsrom_liste.Name = "tidsrom_liste";
+            tidsrom_liste.Size = new Size(131, 406);
+            tidsrom_liste.TabIndex = 10;
+            tidsrom_liste.UseCompatibleStateImageBehavior = false;
             // 
             // tidsrom_label
             // 
-            this.tidsrom_label.AutoSize = true;
-            this.tidsrom_label.Location = new System.Drawing.Point(671, 31);
-            this.tidsrom_label.Name = "tidsrom_label";
-            this.tidsrom_label.Size = new System.Drawing.Size(50, 13);
-            this.tidsrom_label.TabIndex = 11;
-            this.tidsrom_label.Text = "Tids-rom:";
+            tidsrom_label.AutoSize = true;
+            tidsrom_label.Location = new Point(895, 48);
+            tidsrom_label.Margin = new Padding(4, 0, 4, 0);
+            tidsrom_label.Name = "tidsrom_label";
+            tidsrom_label.Size = new Size(72, 20);
+            tidsrom_label.TabIndex = 11;
+            tidsrom_label.Text = "Tids-rom:";
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(579, 396);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(192, 42);
-            this.backButton.TabIndex = 12;
-            this.backButton.Text = "Tilbake";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            backButton.Location = new Point(772, 609);
+            backButton.Margin = new Padding(4, 5, 4, 5);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(256, 65);
+            backButton.TabIndex = 12;
+            backButton.Text = "Tilbake";
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click;
             // 
             // Rom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backButton);
-            this.Controls.Add(this.tidsrom_label);
-            this.Controls.Add(this.tidsrom_liste);
-            this.Controls.Add(this.reservasjonsliste_label);
-            this.Controls.Add(this.reservasjonsliste_liste);
-            this.Controls.Add(this.status_liste);
-            this.Controls.Add(this.status_label);
-            this.Controls.Add(this.rom_liste);
-            this.Controls.Add(this.romvelger_listebox);
-            this.Controls.Add(this.rom_label);
-            this.Controls.Add(this.romvelger_label);
-            this.Name = "Rom";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1067, 692);
+            Controls.Add(backButton);
+            Controls.Add(tidsrom_label);
+            Controls.Add(tidsrom_liste);
+            Controls.Add(reservasjonsliste_label);
+            Controls.Add(reservasjonsliste_liste);
+            Controls.Add(status_liste);
+            Controls.Add(status_label);
+            Controls.Add(rom_liste);
+            Controls.Add(romvelger_listebox);
+            Controls.Add(rom_label);
+            Controls.Add(romvelger_label);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "Rom";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form2";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
