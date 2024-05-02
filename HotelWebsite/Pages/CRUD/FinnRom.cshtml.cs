@@ -28,8 +28,10 @@ namespace HotelWebsite.NET.Pages.CRUD
             return Page();
         }
 
-        public int guestID { get; set; } = default!;
-        public int reservationId { get; set; } = 1;
+        public int reservasjonId { get; set; } = 1;
+        public string Fornavn { get; set; }
+        public string Etternavn { get; set; }
+        public int guestId { get; set; }
         [BindProperty]
         public HotelReservation HotelReservation { get; set; } = default!;
         [BindProperty]
@@ -45,14 +47,10 @@ namespace HotelWebsite.NET.Pages.CRUD
                 return Page();
             }
 
-            HotelRoom room = new HotelRoom();
-            room.NumberOfBeds = 1;
-            room.QualityOfRoom = "Deluxe";
-            room.SizeOfRoom = 15;
-            room.RoomId = 35;
-            room.Occupied = false;
-            HotelReservation.GuestId = guestID;
+            HotelReservation.GuestId = guestId;
             if(_context.HotelRooms.Any(h => hotelRoom.QualityOfRoom==h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied==false)) {
+                Guest gjesten = new Guest();
+                gjesten.GuestId = 3;
                 if (_context.HotelRooms.Any(h => h.HotelReservations.Any(r => r.StartDate <= HotelReservation.StartDate && r.EndDate >= HotelReservation.EndDate)))
                 {
                     errormessage = "rommet er optatt i den tiden";
@@ -62,12 +60,14 @@ namespace HotelWebsite.NET.Pages.CRUD
                 {
                     int roomid = _context.HotelRooms.Where(h => hotelRoom.QualityOfRoom == h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied == false).ToList().First().RoomId;
                     HotelReservation.RoomId = roomid;
-
+                    HotelReservation.Guest= gjesten;
+                    HotelReservation.GuestId = gjesten.GuestId;
+                    HotelReservation.ReservationId = reservasjonId;
                     _context.HotelRooms.Where(h => hotelRoom.QualityOfRoom == h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied == false).ToList().First().HotelReservations.Add(HotelReservation);
                     _context.HotelReservations.Add(HotelReservation);
                     await _context.SaveChangesAsync();
                     TempData["RoomId"] = HotelReservation.RoomId;
-                    reservationId += 1;
+                    reservasjonId += 1;
                     errormessage = "";
                     return RedirectToPage("./BestiltRom");
                 }
