@@ -22,7 +22,6 @@ namespace YourNamespace
                 hotelReservations.Add(reservation);
             }
 
-            UpdateRoomOccupancyStatus();
             checkBoxUpdate();
 
             reservasjonsliste_liste.ItemsSource = hotelReservations;
@@ -38,12 +37,17 @@ namespace YourNamespace
 
             foreach (var room in dx.HotelRooms)
             {
-                if (room.Occupied == false)
+                foreach(var reservasjon in hotelReservations)
                 {
-                    hotelRooms.Add(room);
+                    if(!room.sjekk((DateTime)reservasjon.StartDate, (DateTime)reservasjon.EndDate))
+                    {
+                        hotelRooms.Add(room);
+                    }
                 }
-
+                    
+                
             }
+            dx.SaveChanges();
 
             roomComboBox.ItemsSource = hotelRooms;
             roomComboBox.DisplayMemberPath = "RoomId";
@@ -102,19 +106,13 @@ namespace YourNamespace
                     if (selectedReservation.RoomId != selectedRoom.RoomId)
                     {
                         HotelRoom previousRoom = hotelRooms.FirstOrDefault(r => r.RoomId == selectedReservation.RoomId);
-                        if (previousRoom != null)
-                        {
-                            previousRoom.Occupied = false;
-                        }
 
                         selectedReservation.RoomId = selectedRoom.RoomId;
-                        selectedRoom.Occupied = true;
 
                         dx.HotelReservations.Update(selectedReservation);
                         dx.SaveChanges();
 
                         FilterReservations();
-                        UpdateRoomOccupancyStatus();
                         checkBoxUpdate();
                         reservasjon.Items.Clear();
                         reservasjon.Items.Add(selectedReservation);
@@ -135,31 +133,13 @@ namespace YourNamespace
                 HotelReservation selectedReservation = (HotelReservation)reservasjon.SelectedItem;
                 HotelRoom hotelRoom = hotelRooms.FirstOrDefault(r => r.RoomId == selectedReservation.RoomId);
 
-                if (hotelRoom != null)
-                {
-                    hotelRoom.Occupied = false;
-                }
-
                 dx.HotelReservations.Remove(selectedReservation);
+
                 dx.SaveChanges();
 
                 FilterReservations();
-                UpdateRoomOccupancyStatus();
                 checkBoxUpdate();
             }
-        }
-
-        private void UpdateRoomOccupancyStatus()
-        {
-            var reservations = dx.HotelReservations.ToList();
-
-            foreach (var room in dx.HotelRooms)
-            {
-                bool roomOccupied = reservations.Any(reservation => reservation.RoomId == room.RoomId);
-
-                room.Occupied = roomOccupied;
-            }
-            dx.SaveChanges();
         }
 
         private void search_button_Click(object sender, RoutedEventArgs e)
