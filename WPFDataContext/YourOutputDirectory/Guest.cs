@@ -10,4 +10,9 @@ public partial class Guest
     public virtual Person GuestNavigation { get; set; } = null!;
 
     public virtual ICollection<HotelReservation> HotelReservations { get; set; } = new List<HotelReservation>();
+    public override string ToString()
+    {
+        // Call the parent class's ToString() method
+        return GuestNavigation.ToString();
+    }
 }

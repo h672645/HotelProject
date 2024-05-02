@@ -22,11 +22,11 @@ namespace WPFDataContext
 
         private readonly MyFirstDatabaseContext dx = new();
 
-        public LocalView<Admin> Admins;
-        public LocalView<Guest> Guests;
-        public LocalView<Employee> Employees;
-        public LocalView<HotelReservation> hotelReservations;
-        public LocalView<HotelRoom> HotelRooms;
+        private LocalView<Admin> Admins;
+        private LocalView<Guest> Guests;
+        private LocalView<Employee> Employees;
+        private LocalView<HotelReservation> hotelReservations;
+        private LocalView<HotelRoom> HotelRooms;
 
         public MainWindow()
         {
@@ -42,7 +42,7 @@ namespace WPFDataContext
             dx.Employees.Load();
 
             hotelReservations = dx.HotelReservations.Local;
-            dx.HotelRooms.Load();
+            dx.HotelReservations.Load();
 
             HotelRooms = dx.HotelRooms.Local;
             dx.HotelRooms.Load();

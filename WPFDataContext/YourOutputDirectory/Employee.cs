@@ -10,4 +10,10 @@ public partial class Employee
     public string? Stilling { get; set; }
 
     public virtual Person EmployeeNavigation { get; set; } = null!;
+
+    public override string ToString()
+    {
+        // Call the parent class's ToString() method
+        return EmployeeNavigation.ToString();
+    }
 }

@@ -10,4 +10,6 @@ public partial class Guest
     public virtual Person GuestNavigation { get; set; } = null!;
 
     public virtual ICollection<HotelReservation> HotelReservations { get; set; } = new List<HotelReservation>();
+
+
 }

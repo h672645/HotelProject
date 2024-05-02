@@ -16,4 +16,9 @@ public partial class Person
     public virtual Employee? Employee { get; set; }
 
     public virtual Guest? Guest { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Fornavn} {Etternavn}";
+    }
 }

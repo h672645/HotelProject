@@ -18,4 +18,5 @@ public partial class HotelReservation
     public virtual Guest? Guest { get; set; }
 
     public virtual HotelRoom? Room { get; set; }
+    
 }
