@@ -37,18 +37,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(110, 33);
+            label1.Location = new Point(126, 44);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 0;
             label1.Text = "Cleaning";
             // 
             // backButton
             // 
-            backButton.Location = new Point(697, 457);
-            backButton.Margin = new Padding(4);
+            backButton.Location = new Point(797, 609);
+            backButton.Margin = new Padding(5, 5, 5, 5);
             backButton.Name = "backButton";
-            backButton.Size = new Size(224, 49);
+            backButton.Size = new Size(256, 65);
             backButton.TabIndex = 101;
             backButton.Text = "Tilbake";
             backButton.UseVisualStyleBackColor = true;
@@ -57,20 +57,22 @@
             // listofjobs
             // 
             listofjobs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listofjobs.Location = new Point(74, 71);
+            listofjobs.Location = new Point(29, 95);
+            listofjobs.Margin = new Padding(3, 4, 3, 4);
             listofjobs.Name = "listofjobs";
-            listofjobs.Size = new Size(607, 284);
+            listofjobs.RowHeadersWidth = 51;
+            listofjobs.Size = new Size(999, 379);
             listofjobs.TabIndex = 102;
             // 
             // Maintenence
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 519);
+            ClientSize = new Size(1067, 692);
             Controls.Add(listofjobs);
             Controls.Add(backButton);
             Controls.Add(label1);
-            Margin = new Padding(4);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "Maintenence";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";

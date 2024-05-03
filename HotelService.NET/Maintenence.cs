@@ -1,4 +1,5 @@
 using HotelClasses.NET.YourOutputDirectory;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -61,27 +62,39 @@ namespace HotelComputer
                     {
                         case "ferdigVasket":
                             cleaningList.FerdigVasket = !cleaningList.FerdigVasket;
-                            listofjobs.Invalidate();
-                            listofjobs.Update();
-                            roomsToClean[e.RowIndex].FerdigVasket = !roomsToClean[e.RowIndex].FerdigVasket;
                             break;
+
                         case "underVask":
                             cleaningList.UnderVask = !cleaningList.UnderVask;
-                            listofjobs.Invalidate();
-                            listofjobs.Update();
                             break;
+
                         case "skalVaskes":
                             cleaningList.SkalVaskes = !cleaningList.SkalVaskes;
-                            listofjobs.Invalidate();
-                            listofjobs.Update();
                             break;
+
                         default:
                             break;
                     }
-                    dx.SaveChanges();
+
+                    // Get the corresponding entity from the database context
+                    var dbCleaningList = dx.CleaningLists.Find(cleaningList.RoomId);
+                    if (dbCleaningList != null)
+                    {
+                        // Update the properties of the entity
+                        dbCleaningList.FerdigVasket = cleaningList.FerdigVasket;
+                        dbCleaningList.UnderVask = cleaningList.UnderVask;
+                        dbCleaningList.SkalVaskes = cleaningList.SkalVaskes;
+
+                        // Mark the entity as modified in the context
+                        dx.Entry(dbCleaningList).State = EntityState.Modified;
+
+                        // Save changes to the database
+                        dx.SaveChanges();
+                    }
                 }
             }
         }
+
 
 
         private void listView3_SelectedIndexChanged(object sender, EventArgs e)

@@ -48,15 +48,13 @@ namespace HotelComputer
             // 
             // listofjobs
             // 
-            listofjobs.Location = new Point(129, 99);
+            listofjobs.Location = new Point(12, 99);
             listofjobs.Name = "listofjobs";
-            listofjobs.Size = new Size(700, 400);
+            listofjobs.Size = new Size(1043, 400);
             listofjobs.TabIndex = 100;
             listofjobs.UseCompatibleStateImageBehavior = false;
             listofjobs.View = View.Details;
             listofjobs.SelectedIndexChanged += listofjobs_SelectedIndexChanged;
-
-            listofjobs.Columns.Add("Roominfo", 400); // Width set to 100 pixels, adjust as needed
             // 
             // Service
             // 

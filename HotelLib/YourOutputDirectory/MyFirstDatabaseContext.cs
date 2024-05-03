@@ -55,9 +55,10 @@ public partial class MyFirstDatabaseContext : DbContext
 
         modelBuilder.Entity<CleaningList>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("CleaningList");
+            entity.ToTable("CleaningList");
+
+            entity.HasKey(e => e.RoomId).HasName("PK__Cleaning__32863939D643C243");
+                
         });
 
         modelBuilder.Entity<Employee>(entity =>
