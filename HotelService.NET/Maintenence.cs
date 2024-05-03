@@ -21,14 +21,68 @@ namespace HotelComputer
         {
             InitializeComponent();
 
+            // Assuming dx.CleaningLists is your data source
             foreach (var roomToClean in dx.CleaningLists)
             {
                 roomsToClean.Add(roomToClean);
-
             }
 
+            // Bind the ObservableCollection to the DataGridView
             listofjobs.DataSource = roomsToClean;
+
+            // Customize the columns to display checkboxes
+            DataGridViewCheckBoxColumn cleanedColumn = new DataGridViewCheckBoxColumn();
+            cleanedColumn.HeaderText = "Skal Vaskes";
+            cleanedColumn.DataPropertyName = "skalVaskes";
+            listofjobs.Columns.Add(cleanedColumn);
+
+            DataGridViewCheckBoxColumn repairColumn = new DataGridViewCheckBoxColumn();
+            repairColumn.HeaderText = "Under Vask";
+            repairColumn.DataPropertyName = "underVask";
+            listofjobs.Columns.Add(repairColumn);
+
+            DataGridViewCheckBoxColumn checkedColumn = new DataGridViewCheckBoxColumn();
+            checkedColumn.HeaderText = "Ferdig Vasket";
+            checkedColumn.DataPropertyName = "ferdigVasket";
+            listofjobs.Columns.Add(checkedColumn);
+
+            // Subscribe to the CellContentClick event to handle checkbox state changes
+            listofjobs.CellContentClick += listofjobs_CellContentClick;
         }
+        private void listofjobs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (listofjobs.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
+                {
+                    // Update the corresponding boolean property in the CleaningList object
+                    var cleaningList = (CleaningList)listofjobs.Rows[e.RowIndex].DataBoundItem;
+                    switch (listofjobs.Columns[e.ColumnIndex].DataPropertyName)
+                    {
+                        case "ferdigVasket":
+                            cleaningList.FerdigVasket = !cleaningList.FerdigVasket;
+                            listofjobs.Invalidate();
+                            listofjobs.Update();
+                            roomsToClean[e.RowIndex].FerdigVasket = !roomsToClean[e.RowIndex].FerdigVasket;
+                            break;
+                        case "underVask":
+                            cleaningList.UnderVask = !cleaningList.UnderVask;
+                            listofjobs.Invalidate();
+                            listofjobs.Update();
+                            break;
+                        case "skalVaskes":
+                            cleaningList.SkalVaskes = !cleaningList.SkalVaskes;
+                            listofjobs.Invalidate();
+                            listofjobs.Update();
+                            break;
+                        default:
+                            break;
+                    }
+                    dx.SaveChanges();
+                }
+            }
+        }
+
 
         private void listView3_SelectedIndexChanged(object sender, EventArgs e)
         {
