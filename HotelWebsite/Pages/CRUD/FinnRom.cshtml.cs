@@ -14,6 +14,8 @@ namespace HotelWebsite.NET.Pages.CRUD
 {
     public class FinnRomModel : PageModel
     {
+        private static int resId = 10;
+        private static int gjestId = 10;
         private readonly HotelWebsite.NET.YourOutputDirectory.MyFirstDatabaseContext _context;
 
         public FinnRomModel(HotelWebsite.NET.YourOutputDirectory.MyFirstDatabaseContext context)
@@ -28,7 +30,7 @@ namespace HotelWebsite.NET.Pages.CRUD
             return Page();
         }
 
-        public int reservasjonId { get; set; } = 1;
+        public int reservasjonId { get; set; }
         public string Fornavn { get; set; }
         public string Etternavn { get; set; }
         public int guestId { get; set; }
@@ -47,11 +49,11 @@ namespace HotelWebsite.NET.Pages.CRUD
                 return Page();
             }
 
+            Guest gjesten = new Guest();
+            gjesten.GuestId = ++gjestId;
             HotelReservation.GuestId = guestId;
             if(_context.HotelRooms.Any(h => hotelRoom.QualityOfRoom==h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied==false)) {
-                Guest gjesten = new Guest();
-                Random random = new Random();
-                gjesten.GuestId = random.Next(1,150);
+                
                 if (_context.HotelRooms.Any(h => h.HotelReservations.Any(r => r.StartDate <= HotelReservation.StartDate && r.EndDate >= HotelReservation.EndDate)))
                 {
                     errormessage = "rommet er optatt i den tiden";
@@ -63,12 +65,11 @@ namespace HotelWebsite.NET.Pages.CRUD
                     HotelReservation.RoomId = roomid;
                     HotelReservation.Guest= gjesten;
                     HotelReservation.GuestId = gjesten.GuestId;
-                    HotelReservation.ReservationId = reservasjonId;
+                    HotelReservation.ReservationId = ++resId;
                     _context.HotelRooms.Where(h => hotelRoom.QualityOfRoom == h.QualityOfRoom && hotelRoom.NumberOfBeds == h.NumberOfBeds && hotelRoom.SizeOfRoom == h.SizeOfRoom && h.Occupied == false).ToList().First().HotelReservations.Add(HotelReservation);
                     _context.HotelReservations.Add(HotelReservation);
                     await _context.SaveChangesAsync();
                     TempData["RoomId"] = HotelReservation.RoomId;
-                    reservasjonId += 1;
                     errormessage = "";
                     return RedirectToPage("./BestiltRom");
                 }
